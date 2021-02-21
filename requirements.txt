@@ -4,3 +4,4 @@ google>=2.0.3
 requests>=2.23.0
 shodan==1.25.0
 pyfiglet
+socialscan>=1.4.1
