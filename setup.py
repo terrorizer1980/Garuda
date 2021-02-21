@@ -1,5 +1,6 @@
 import pickle
 import pyfiglet
+import os
 print(pyfiglet.Figlet(font='slant').renderText('Garuda'))
 print('\nChoose an option')
 print('[1] Enter Shodan API key')
