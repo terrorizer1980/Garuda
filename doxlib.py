@@ -80,6 +80,7 @@ def g_search(query):
     else:
         for a in lol:
             print(f'{b}{plus}{cy} Retrieved URL: {g}{a}')
+            sleep(1)
 
 
 def check_root():
@@ -331,9 +332,12 @@ class Ipdox:
         self.ip = ip
 
     def start_Ip_doxing(self):
-        #api = '3d3aa7b39b504b0992df337b4ac74801'
+        if not os.name == 'nt':
+            api_file = 'core/geolocation.dat'
+        else:
+            api_file = 'core\\geolocation.dat'
         try:
-            with open('core\\geolocation.dat', 'rb') as f:
+            with open(api_file, 'rb') as f:
                 api = p.load(f)
         except:
             print(f'{b}{warn}{r} No Geolocation.io API. Run setup.py to store one')
@@ -401,7 +405,6 @@ class Maildox:
         print(f'{b}{g}[2] Dork for Throwbin databases')
         print(f'{b}{g}[3] Dork for PDF data')
         print(f'{b}{g}[4] Run SocialScan')
-        print(f'{b}{g}[5] Run H8Mail Scan')
         a = int(input(f'{b}{inp}{cy} Enter Choice: {r}'))
         if a == 0:
             print(f'{b}{plus} ---- {cy}Fetching relevant data from Google{g} ----')
@@ -422,9 +425,6 @@ class Maildox:
         elif a == 4:
             print(f'{b}{asterix}{cy} Running SocialScan...{g}')
             os.system(f'socialscan {self.mail}')
-        elif a == 5:
-            print(f'{b}{asterix}{cy} Running H8Mail Scan...{g}')
-            os.system(f'h8mail -t {self.mail}')
         else:
             print(f'{warn}{r} Error: Invalid Option{rs}')
 
@@ -446,7 +446,11 @@ class UserDox:
         hits = [201, 200, 202, 203, 204, 205, 206, 207, 208, 226]  # success codes
         # --------------------------------------------------------------------------------
         print(f'{b}{asterix}{cy} Checking in websites...')
-        with open('core\\sites.dat', 'rb') as f:  # load sites from core/sites.dat
+        if os.name == 'nt':
+            site_file = 'core\\sites.dat'
+        else:
+            site_file = 'core/sites.dat'
+        with open(site_file, 'rb') as f:  # load sites from core/sites.dat
             sites = p.load(f)
         f.close()
         good = []  # list of good sites
@@ -489,8 +493,12 @@ class Shodan_search:
         self.query = query
 
     def start(self):
+        if os.name == 'nt':
+            api_file = 'core\\shodan.dat'
+        else:
+            api_file = 'core/shodan.dat'
         try:
-            with open('core\\shodan.dat', 'rb') as f:
+            with open(api_file, 'rb') as f:
                 api = p.load(f)
         except:
             print(f'{b}{warn}{r} No Shodan API. Run setup.py to store one')
@@ -508,6 +516,9 @@ class Shodan_search:
                     sleep(1)
             else:
                 print(f'{b}{minus}{r} No results found')
+        except KeyboardInterrupt:
+            print(f'{b}{warn}{r} Error: Task Interrupted(Ctrl+C){g}')  # handler
+            break
         except:
             print(f'{b}{warn}{r} Can\'t reach Shodan. Check API key and try again')
 
