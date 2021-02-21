@@ -518,7 +518,6 @@ class Shodan_search:
                 print(f'{b}{minus}{r} No results found')
         except KeyboardInterrupt:
             print(f'{b}{warn}{r} Error: Task Interrupted(Ctrl+C){g}')  # handler
-            break
         except:
             print(f'{b}{warn}{r} Can\'t reach Shodan. Check API key and try again')
 
