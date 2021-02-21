@@ -1,13 +1,13 @@
 # Garuda V1.1
 
 <p align="center">
-    A Sophisticated And Beautiful Doxing Tool<br>
-    <a href="https://telegram.me/joinchat/AAAAAEivg18nL5WJOPdokA"><img src="https://img.shields.io/badge/Telegram-HackTronix1-green"></a> <a href="https://www.instagram.com/cryptonian0"><img src="https://img.shields.io/badge/FollowOn-Instagram-green"></a><br>
-    Works on Android[Termux] | Linux | Windows<br>
-    :star: Don't Forget to give it a star :star:
+	<b>A Sophisticated And Beautiful Doxing Tool</b><br>
+    <a href="https://telegram.me/joinchat/AAAAAEivg18nL5WJOPdokA"><img src="https://img.shields.io/badge/Telegram-HackTronix1-green"></a> <a href="https://www.instagram.com/cryptonian0"><img src="https://img.shields.io/badge/FollowOn-Instagram-green"></a><br><br>
+	<b>Works on Android[Termux] | Linux | Windows</b><br>
+    Don't Forget to give it a star :exclamation:
     </p>
     
-# How to use Garuda
+# How to use :question:
 
 * First of all you need API keys for Shodan and geolocation.io
 
@@ -51,12 +51,12 @@
 
 `python garuda.py --shodan`
 
-# Disclaimer
+# Warning :warning:
 
 <p align="center"><b>This tool is solely for educational purposes. Developer will not be reponsible for any misuse of the tool</b></p>
 
 # Support
 
-<p align="center"> Join our <a href="https://telegram.me/HackTronix_Hub">Hub</a> if you have any issues with the tool<br>
-	Suggestions/Major issues - Open an issue on GitHub<br>
+<p align="center"> <b>Join our <a href="https://telegram.me/HackTronix_Hub">Hub</a> if you have any issues with the tool<br>
+	Suggestions/Major issues - Open an issue on GitHub</b><br>
 Code improvements are welcome</p>
