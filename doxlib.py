@@ -81,6 +81,14 @@ def g_search(query):
         for a in lol:
             print(f'{b}{plus}{cy} Retrieved URL: {g}{a}')
             sleep(1)
+        file = 'googleresults.txt'
+        with open(file, 'a') as f:
+            f.write(f'------Results from google------\n')
+            f.write(f'----Query was: {query}----\n')
+            for j in lol:
+                f.write(f'URL: {j}\n')
+            f.close()
+        print(f'{b}{info}{g} Results saved to {w}{file}')
 
 
 def check_root():
