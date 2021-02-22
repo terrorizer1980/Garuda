@@ -47,7 +47,7 @@
 
 `python garuda.py --user`
 
-* Perform Shodan search and get IPs and Ports of vulnerable devices
+* Perform Shodan search and get IPs and Ports of devices available in the internet
 
 `python garuda.py --shodan`
 
