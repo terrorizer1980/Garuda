@@ -83,10 +83,9 @@ def g_search(query):
             sleep(1)
         file = 'googleresults.txt'
         with open(file, 'a') as f:
-            f.write(f'------Results from google------\n')
-            f.write(f'----Query was: {query}----\n')
+            f.write(f'[i] Query was: {query}\n')
             for j in lol:
-                f.write(f'URL: {j}\n')
+                f.write(f'[+] URL: {j}\n')
             f.close()
         print(f'{b}{info}{g} Results saved to {w}{file}')
 
@@ -238,17 +237,15 @@ class PhoneDox:
     def simple_scan(self, working=True):
         # function to get the basic info about a number (phonenumbers module)
         phone = phonenumbers.parse(self.phonenumber)
+        another_num = self.phonenumber.replace('+', '')
         if not phonenumbers.is_valid_number(phone):
             return False
         if phonenumbers.is_possible_number(phone):
             print(f"{b}{plus} The number is valid and possible.")
         else:
             print(f"{b}{warn} The number is valid but not possible.")
-        international = phonenumbers.format_number(
-            phone, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
-        countrycode = phonenumbers.format_number(
-            phone, phonenumbers.PhoneNumberFormat.INTERNATIONAL
-        ).split(" ")[0]
+        international = phonenumbers.format_number(phone, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
+        countrycode = international.split(' ')[0]
         country = geocoder.country_name_for_number(phone, 'en')
         location = geocoder.description_for_number(phone, 'en')
         carrierr = carrier.name_for_number(phone, 'en')
@@ -261,11 +258,12 @@ class PhoneDox:
             for time in timezone.time_zones_for_number(phone):
                 print(f'{b}{plus} Timezone             : {time}')
         # ------------------------------------------------------------------------
+        print(f'{b}{info} ---- Fetching relevant data from Google ----')
+        dork = f'"{self.phonenumber}" OR "{another_num}" OR "{international}"'
+        g_search(dork)
 
     def db_scan(self):
         # function to get results from google and launch websites for available databases
-        print(f'{b}{info} ---- Fetching relevant data from Google ----')
-        g_search(self.phonenumber)
         print(f'{b}{asterix}{cy} Website lookup for available databases{g}')
         pno = list(self.phonenumber)  # formatting number
         pno.reverse()
