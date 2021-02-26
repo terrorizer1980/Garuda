@@ -51,6 +51,10 @@
 
 `python garuda.py --shodan`
 
+* Perform Google search, useful for fetching dork results
+
+`python garuda.py --google`
+
 # Warning :warning:
 
 <p align="center"><b>This tool is solely for educational purposes. Developer will not be reponsible for any misuse of the tool</b></p>
