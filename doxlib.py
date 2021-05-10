@@ -89,7 +89,7 @@ def g_search(query):
             f.close()
         print(f'{b}{info}{g} Results saved to {w}{file}')
 
-
+'''
 def check_root():
     """
     Objective: Checks root access for Linux
@@ -109,7 +109,7 @@ def check_root():
             print(f'{b}{warn}{r} Error: Need root access to launch webbrowser')
             print(f'{b}{info} Run {w}sudo su {g}and retry')
             sys.exit()
-
+'''
 
 def format1(num):
     """a format for phonenumbers"""
@@ -202,8 +202,6 @@ class NameDox:
             print(f'{b}{info}--- Fetching info from Google[Query: {w}{queries[0]}{g}] ---')
             g_search(queries[8])
         elif argv == 9:
-            if not os.name == 'nt' and sys.platform != 'Darwin':
-                check_root()
             print(f'{b}{info}--- Website lookup for available databases ---')
             sleep(1)
             print(f'{b}{plus} URL: https://pipl.com/search/?q={query}')
@@ -272,6 +270,7 @@ class PhoneDox:
         pno.reverse()
         pno = ''.join(pno)
         print(f'{b}{plus} URL: https://www.truepeoplesearch.com/results?phoneno={pno}')
+        web_number1 = pno
         sleep(1)
         pno = list(pno)
         for i in pno:  # so stupid such a dumb kid i am :(
@@ -280,6 +279,7 @@ class PhoneDox:
         pno = ''.join(pno)
         pno = pno.split('+')[1]
         print(f'{b}{plus} URL: http://www.scamcallfighters.com/search-phone-{pno}')
+        web_number2 = pno
         sleep(1)
         pno = list(pno)
         pno.reverse()
@@ -289,38 +289,41 @@ class PhoneDox:
         pno.reverse()
         pno = ''.join(pno)
         print(f'{b}{plus} URL: https://www.411.com/phone/{pno}')
+        web_number3 = pno
         sleep(1)
         print(f'{b}{plus} URL: https://www.whitepages.com/phone/{pno}')
+        web_number4 = pno
         sleep(1)
         pno = list(pno)
         number = format1(pno)
         print(f'{b}{plus} URL: https://www.okcaller.com/{number}')
+        web_number5 = number
         sleep(1)
         number = list(number)
         number1 = format2(number)
         number2 = ''.join(number1)
         print(f'{b}{plus} URL: https://www.reverse-lookup.co/{number2}')
+        web_number6 = number2
         sleep(1)
         print(f'{b}{plus} URL: https://www.revealname.com/{number2}')
+        web_number7 = number2
         sleep(1)
         prompt = str(input(f'{b}{asterix}{cy} Wanna launch Web Browser?[y/n]: {g}'))
         if prompt == 'y':
-            if not os.name == 'nt' and sys.platform != 'Darwin':
-                check_root()
             sleep(1)
-            wb.open(f'https://www.truepeoplesearch.com/results?phoneno={pno}')
+            wb.open(f'https://www.truepeoplesearch.com/results?phoneno={web_number1}')
             sleep(1)
-            wb.open(f'http://www.scamcallfighters.com/search-phone-{pno}')
+            wb.open(f'http://www.scamcallfighters.com/search-phone-{web_number2}')
             sleep(1)
-            wb.open(f'https://www.411.com/phone/{pno}')
+            wb.open(f'https://www.411.com/phone/{web_number3}')
             sleep(1)
-            wb.open(f'https://www.whitepages.com/phone/{pno}')
+            wb.open(f'https://www.whitepages.com/phone/{web_number4}')
             sleep(1)
-            wb.open(f'https://www.okcaller.com/{number}')
+            wb.open(f'https://www.okcaller.com/{web_number5}')
             sleep(1)
-            wb.open(f'https://www.reverse-lookup.co/{number1}')
+            wb.open(f'https://www.reverse-lookup.co/{web_number6}')
             sleep(1)
-            wb.open(f'https://www.revealname.com/{number1}')
+            wb.open(f'https://www.revealname.com/{web_number7}')
         else:
             print(f'{b}{warn} Aborted.')
 
@@ -386,8 +389,6 @@ class Ipdox:
         sleep(1)
         prompt = str(input(f'{b}{asterix}{cy} Wanna launch Web Browser?[y/n]: '))
         if prompt == 'y':
-            if not os.name == 'nt' and sys.platform != 'Darwin':
-                check_root()
             wb.open(f'https://whatismyipaddress.com/ip/{ip}')
             sleep(1)
             wb.open(f'https://www.g-force.ca/en/hosting/ip-whois?ip={ip}')

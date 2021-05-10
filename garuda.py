@@ -103,6 +103,7 @@ elif arg == '--phone':
     print(f'{info}{cy} Format: Country Code + Number')
     print(f'{info}{cy} Example: +19087654321')
     phone_number = str(input(f'{inp}{cy} Enter Phone Number: {r}'))
+    phone_number = ''.join(phone_number.split())
     phonedox = PhoneDox(phone_number)
     print(f'{info}{cy} Fetching information for {w}{phone_number}')
     phonedox.simple_scan()
