@@ -9,7 +9,7 @@
     
 # How to use :question:
 
-* First of all you need API keys for Shodan and geolocation.io
+* First of all you need API keys for Shodan and ipgeolocation.io
 
 * Goto their websites, sign up and get 'em
 
