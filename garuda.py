@@ -4,7 +4,7 @@ This script is only for educational purposes
 I won't be responsible for any misuse of the tool
 ---Copy Code With Credits---
 For any issues visit @HackTronix_Hub on Telegram
-|Author: Cryptonian[@Cryptonian007] : Anubhav Kalita|
+|Author: Cryptonian[@Cryptonian007]
 ====================================================
 '''
 
