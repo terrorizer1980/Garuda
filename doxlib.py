@@ -10,7 +10,7 @@
 ===================================================
 -----TOOL FOR EDUCATIONAL PURPOSES------
 Coded by: github.com/Cryptonian007
-Name    : Anubhav Kalita
+Name    : Julian Hansen
 Copy code with credits ^_^
 ===================================================
 """
